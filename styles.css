@@ -103,7 +103,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -124,39 +124,33 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     position: relative;
     z-index: 1;
     min-height: 100vh;
 }
 
 .hero-title {
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 2.5rem;
-    line-height: 1.2;
-    white-space: nowrap;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.3;
 }
 
 .highlight {
-    color: #fbbf24;
+    color: #8b5cf6;
 }
 
-.hero-description {
-    font-size: 1.3rem;
-    margin-bottom: 3rem;
-    opacity: 0.9;
-    line-height: 1.8;
-    max-width: 600px;
-}
 
 .hero-buttons {
     display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
 }
 
 .btn {
@@ -172,14 +166,40 @@ body {
 }
 
 .btn-primary {
-    background-color: #fbbf24;
-    color: #1f2937;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background-color: #f59e0b;
+    background: linear-gradient(135deg, #a855f7, #c084fc);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.btn-scroll {
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    opacity: 0.3;
+}
+
+.btn-scroll:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    opacity: 1;
 }
 
 .btn-secondary {
@@ -194,64 +214,6 @@ body {
     transform: translateY(-2px);
 }
 
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.code-animation {
-    width: 250px;
-    height: 160px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.code-animation::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px 12px 0 0;
-}
-
-.code-animation::after {
-    content: '¡Ü ¡Ü ¡Ü';
-    position: absolute;
-    top: 8px;
-    left: 15px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 12px;
-    letter-spacing: 8px;
-}
-
-.code-line {
-    height: 3px;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b);
-    margin: 12px 0;
-    border-radius: 2px;
-    animation: codeTyping 2s ease-in-out infinite;
-    margin-top: 25px;
-}
-
-.code-line:nth-child(1) { width: 80%; animation-delay: 0s; }
-.code-line:nth-child(2) { width: 60%; animation-delay: 0.5s; }
-.code-line:nth-child(3) { width: 90%; animation-delay: 1s; }
-.code-line:nth-child(4) { width: 70%; animation-delay: 1.5s; }
-
-@keyframes codeTyping {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-}
 
 /* Section Styles */
 section {
@@ -706,7 +668,7 @@ section {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         white-space: normal;
     }
 
@@ -758,7 +720,7 @@ section {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         white-space: normal;
     }
 
