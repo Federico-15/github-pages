@@ -101,12 +101,12 @@ function typeWriter(element, text, speed = 100) {
         if (i < text.length) {
             const char = text.charAt(i);
             
-            // HTML ÅÂ±× ½ÃÀÛÀ» °¨Áö
+            // HTML ï¿½Â±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (char === '<') {
-                // ÅÂ±×ÀÇ ³¡À» Ã£±â
+                // ï¿½Â±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
                 let tagEnd = text.indexOf('>', i);
                 if (tagEnd !== -1) {
-                    // ÀüÃ¼ ÅÂ±×¸¦ ÇÑ ¹ø¿¡ Ãß°¡
+                    // ï¿½ï¿½Ã¼ ï¿½Â±×¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
                     const tag = text.substring(i, tagEnd + 1);
                     element.innerHTML += tag;
                     i = tagEnd + 1;
@@ -134,15 +134,6 @@ window.addEventListener('load', () => {
     }
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
 
 // Form submission handling
 const contactForm = document.querySelector('.contact-form form');
@@ -159,7 +150,7 @@ if (contactForm) {
         
         // Simple validation
         if (!name || !email || !subject || !message) {
-            alert('¸ðµç ÇÊµå¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.');
+            alert('ï¿½ï¿½ï¿½ ï¿½Êµå¸¦ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.');
             return;
         }
         
@@ -167,11 +158,11 @@ if (contactForm) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
-        submitBtn.textContent = 'Àü¼Û Áß...';
+        submitBtn.textContent = 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½...';
         submitBtn.disabled = true;
         
         setTimeout(() => {
-            alert('¸Þ½ÃÁö°¡ ¼º°øÀûÀ¸·Î Àü¼ÛµÇ¾ú½À´Ï´Ù!');
+            alert('ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÛµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!');
             contactForm.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
